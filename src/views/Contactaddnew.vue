@@ -25,7 +25,7 @@ export default {
         async addContact(data) {
             try {
                 await ContactService.create(data);
-                alert('Thêm mới danh bạ thành công.');
+                alert('Thêm mới danh bạ thành công.');// THONG BAO
                 this.$router.push({ name: "contactbook" });
             } catch (error) {
                 console.log(error);
