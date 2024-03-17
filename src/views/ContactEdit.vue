@@ -27,11 +27,12 @@ export default {
                 this.contact = await ContactService.get(id);
             } catch (error) {
                 console.log(error);
+
                 // Chuyển sang trang NotFound đồng thời giữ cho URL không đổi
                 this.$router.push({
                     name: "notfound",
                     params: {
-                        pathMatch: this.$route.path.split("/").slice(1)
+                        pathMatch: this.$route.path.split("/").slice(1),
                     },
                     query: this.$route.query,
                     hash: this.$route.hash,
@@ -41,7 +42,7 @@ export default {
         async updateContact(data) {
             try {
                 await ContactService.update(this.contact._id, data);
-                alert('Liên hệ được cập nhật thành công.');
+                alert("Liên hệ được cập nhật thành công.");
                 this.$router.push({ name: "contactbook" });
             } catch (error) {
                 console.log(error);
